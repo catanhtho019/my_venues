@@ -1,0 +1,12 @@
+<h1>Editing Venue</h1>
+
+<%= simple_form_for @venue do |f| %>
+        <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Show', @venue %> |
+<%= link_to 'Back', venues_path %>
