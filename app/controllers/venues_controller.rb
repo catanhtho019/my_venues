@@ -14,6 +14,10 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
 
+  def edit
+    @venue = Venue.find(params[:id])
+  end
+
   def create
     @venue = Venue.new(venue_params)
     if @venue.save
@@ -22,11 +26,7 @@ class VenuesController < ApplicationController
       render 'new'
     end
   end
-
-  def edit
-    @venue = Venue.find(params[:id])
-  end
-
+  
   def update
     @venue = Venue.find(params[:id])
 
@@ -36,10 +36,10 @@ class VenuesController < ApplicationController
         format.html { render :edit }
       end
     end
-
+  
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :location, :type, :description)
+    params.require(:venue).permit(:name, :location, :category, :description)
   end
 end
