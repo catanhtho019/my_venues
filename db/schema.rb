@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_155041) do
   create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "type"
+    t.string "category"
     t.string "description"
     t.integer "rating"
     t.datetime "created_at", null: false

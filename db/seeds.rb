@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+venues = Venue.create([{ name: 'Boojum', location: 'Belfast', category: 'Burrito', description: 'Yummy Burritos' }, { name: 'Winterfell', location: 'The North', category: 'Cold', description: 'Fuck D&D' }])
