@@ -1,6 +1,7 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    @venues = Venue.where("location ILIKE '%#{params[:location]}%'")
+
   end
 
   def show
@@ -25,7 +26,7 @@ class VenuesController < ApplicationController
       render 'new'
     end
   end
-
+  
   def update
     @venue = Venue.find(params[:id])
 
@@ -35,8 +36,7 @@ class VenuesController < ApplicationController
         format.html { render :edit }
       end
     end
-
-
+  
   private
 
   def venue_params

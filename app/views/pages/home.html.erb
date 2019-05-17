@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1 class="text-center mt-4">Find my Venue</h1>
+
+<div class="text-center mt-4">
+  <form action="/venues" method="get">
+    <input type="text" name="location">
+    <input type="submit" value="Search">
+  </form>
+</div>
+
+
+<div class="cards-homepage text-center mt-4">
+  <span class="top-cards"> Venue</span>
+  <% @venues.each do |venue| %>
+    <h3><%= venue.name %></h3>
+    <p><%= venue.location %></p>
+  <% end %>
+</div>
