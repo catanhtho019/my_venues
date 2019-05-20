@@ -6,15 +6,29 @@
   box-sizing: border-box;
 }
 
-.cards-homepage {
 
-  margin-top: 10px;
+
+
+.homepage-cards {
+
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+  margin-left: 20px;
 }
 
 // .top-cards {
 //   display: inline-block;
 
 // }
+
+.card-results {
+display: inline-block;
+}
 
 .cards {
     width: 100%;
@@ -88,7 +102,7 @@ top: 0;
   margin-right: 25px;
   transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: #fff;
-    width: 33.3%;
+  width: 50%;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
