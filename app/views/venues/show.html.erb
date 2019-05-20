@@ -60,11 +60,6 @@
       <strong>Price Per Hour (£):</strong>
       <%= @venue.price %>
     </p>
-
-    <p>
-      <strong>User:</strong>
-      <%= @venue.user.first_name %> <%= @venue.user.last_name %>
-    </p>
   </section>
   </div>
 </div>
@@ -129,5 +124,4 @@
     <% end %>
   </div>
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
