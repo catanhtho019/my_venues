@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
     end
     @venue = Venue.find(params[:id])
     @bookings = @venue.bookings
-    # @alert_message = "You are viewing the venue of #{@venue.user.first_name}"
+    @alert_message = "You are viewing the venue of #{@venue.user.first_name}"
   end
 
   def new
@@ -41,7 +41,6 @@ class VenuesController < ApplicationController
   end
 
   def update
-
     set_venue
     if @venue.update(venue_params)
       redirect_to @venue, notice: 'Venue was successfully updated.'
@@ -49,7 +48,6 @@ class VenuesController < ApplicationController
       format.html { render :edit }
     end
   end
-
 
   def destroy
     set_venue
@@ -60,7 +58,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :location, :category, :description, :price)
+    params.require(:venue).permit(:name, :location, :post_code, :category, :description, :price, :photo)
   end
 
   def set_venue

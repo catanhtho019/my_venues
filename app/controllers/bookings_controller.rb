@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
       @booking.value = 0
     end
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to @booking.user, notice: 'Your rental was successfully created!'
     else
       redirect_to venue_path(@venue)
     end

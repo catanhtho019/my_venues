@@ -1,0 +1,21 @@
+<div class="rentals-form">
+  <div class="rentals-form-title">
+    <h5 class="venue_price">£ <span id="venue-price"><%= number_with_delimiter(@venue.price, delimiter: ',') %></span> per hour</h5>
+    <h6>Reserve now!</h6>
+    </div>
+  </div>
+  <div>
+    <%= simple_form_for([@venue, @booking]) do |f| %>
+    <%= f.input :checkin_on, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+    <%= f.input :checkout_on, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+    <%= f.button :submit, "Book", class: "btn btn-primary", style: "margin-bottom: 20px;" %>
+    <% end %>
+    <div id="loader-4">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    </div>
+    <div id="total">
+  </div>
+</div>
