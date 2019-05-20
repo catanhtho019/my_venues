@@ -9,8 +9,3 @@
 
 venues = Venue.create([{ name: 'Boojum', location: 'Belfast', category: 'Burrito', description: 'Yummy Burritos' }, { name: 'Winterfell', location: 'The North', category: 'Cold', description: 'Fuck D&D' }])
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# response = JSON.parse(open(url).read)
-# response["venues"].each do |venue|
-#   Venue.create!(location: venue["strIngredient1"])
-# end
