@@ -41,6 +41,7 @@
 </div> -->
 
   <section class="col-xs-12 col-sm-8 col-md-9 mt-10">
+    <img src="https://picsum.photos/200" class="show-image" alt="<%= @venue.name %>" style="width:300px">
     <p>
       <strong>Location:</strong>
       <%= @venue.location %>
@@ -65,7 +66,7 @@
 </div>
 
 
- <div>
+ <div class="container">
         <p><strong>Reviews</strong></p>
         <% @bookings.each do |booking|%>
         <ul class="list-inline">
@@ -87,9 +88,8 @@
           <% end %>
          </ul>
        <% end %>
-     </div>
 
-    </div>
+
 
     <!-- <div class="col-xs-12 col-sm-6">
       <div class="text-center">
@@ -114,14 +114,14 @@
     </div>
   </div>
 </div> -->
-<div class="col-xs-3 rentals-box">
-    <% if user_signed_in? && @venue.user == current_user %>
-      <%= render 'rented_venue_edit_form' %>
-    <% elsif user_signed_in?  %>
-      <%= render 'rent_venue_form' %>
-    <% else  %>
-      <%=  render 'rent_venue_form' %>
-    <% end %>
+      <div class="col-xs-3 rentals-box">
+          <% if user_signed_in? && @venue.user == current_user %>
+            <%= render 'rented_venue_edit_form' %>
+          <% elsif user_signed_in?  %>
+            <%= render 'rent_venue_form' %>
+          <% else  %>
+            <%=  render 'rent_venue_form' %>
+          <% end %>
+        </div>
+      <%= link_to 'Back', venues_path %>
   </div>
-
-<%= link_to 'Back', venues_path %>
