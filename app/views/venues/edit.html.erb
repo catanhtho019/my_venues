@@ -3,7 +3,8 @@
 <%= simple_form_for @venue do |f| %>
         <%= f.input :name %>
         <%= f.input :location %>
-        <%= f.input :category %>
+        <%= f.input :category, collection: ["Bar", "Club", "Pub",
+          "Café" , "Restaurant", ] %>
         <%= f.input :description %>
         <%= f.input :price %>
         <%= f.button :submit, class: 'btn btn-primary' %>
