@@ -41,6 +41,7 @@ class VenuesController < ApplicationController
   end
 
   def update
+
     set_venue
     if @venue.update(venue_params)
       redirect_to @venue, notice: 'Venue was successfully updated.'
@@ -48,6 +49,7 @@ class VenuesController < ApplicationController
       format.html { render :edit }
     end
   end
+
 
   def destroy
     set_venue

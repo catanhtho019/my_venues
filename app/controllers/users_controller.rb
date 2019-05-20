@@ -18,4 +18,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :photo, :description)
   end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
+  end
 end
