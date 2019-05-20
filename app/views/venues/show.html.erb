@@ -1,34 +1,73 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
+<div class="container p-4">
+  <div class="card">
+  <div class="heading text-center mt-4">
+  <h2>
+    <%= @venue.name %>
+  </h2>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @venue.location %>
-</p>
+<!-- Tab links -->
+<!-- <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Description')">description</button>
+  <button class="tablinks" onclick="openCity(event, 'Location')">Location</button>
+  <button class="tablinks" onclick="openCity(event, 'Category')">Category</button>
+</div> -->
 
-<p>
-  <strong>Category:</strong>
-  <%= @venue.category %>
-</p>
+<!-- Tab content -->
+<!-- <div id="Description" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div> -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @venue.description %>
-</p>
+<!-- <div id="Location" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
 
-<p>
-  <strong>Price Per Hour (£):</strong>
-  <%= @venue.price %>
-</p>
+<div id="Category" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @venue.user.first_name %> <%= @venue.user.last_name %>
-</p>
+<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+  <span onclick="this.parentElement.style.display='none'">x</span>
+</div> -->
+
+  <section class="col-xs-12 col-sm-8 col-md-9 mt-10">
+    <p>
+      <strong>Location:</strong>
+      <%= @venue.location %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @venue.category %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @venue.description %>
+    </p>
+
+    <p>
+      <strong>Price Per Hour (£):</strong>
+      <%= @venue.price %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @venue.user.first_name %> <%= @venue.user.last_name %>
+    </p>
+  </section>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
