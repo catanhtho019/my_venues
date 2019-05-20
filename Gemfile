@@ -18,7 +18,6 @@ gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
-gem 'fog-aws'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
