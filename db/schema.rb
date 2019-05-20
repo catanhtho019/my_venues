@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_155041) do
+ActiveRecord::Schema.define(version: 2019_05_20_104025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2019_05_16_155041) do
   create_table "bookings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "checkin_on"
+    t.date "checkout_on"
+    t.integer "value"
+    t.string "status"
+    t.integer "user_id"
+    t.integer "venue_id"
+    t.index ["venue_id"], name: "index_bookings_on_venue_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -25,6 +33,9 @@ ActiveRecord::Schema.define(version: 2019_05_16_155041) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.integer "booking_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +46,10 @@ ActiveRecord::Schema.define(version: 2019_05_16_155041) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo", default: ""
+    t.string "first_name"
+    t.string "last_name"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -47,6 +62,12 @@ ActiveRecord::Schema.define(version: 2019_05_16_155041) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "post_code"
+    t.string "photo"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_venues_on_user_id"
+
   end
 
 end

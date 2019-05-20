@@ -19,9 +19,15 @@
   <strong>Description:</strong>
   <%= @venue.description %>
 </p>
+
+<p>
+  <strong>Price Per Hour (£):</strong>
+  <%= @venue.price %>
+</p>
+
 <p>
   <strong>User:</strong>
-  <%#= @venue.user %>
+  <%= @venue.user.first_name %> <%= @venue.user.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
