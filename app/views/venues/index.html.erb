@@ -6,8 +6,10 @@
   <h1>Venues</h1>
   <% if @venues.count == 1 %>
     <p>Found 1 Result</p>
-  <% else  %>
+  <% elsif  %>
     <p>Found <%= @venues.count %> Results</p>
+  <% else  %>
+    <p>Found 0 Results</p>
   <% end %>
   <div class="card-results d-flex">
     <% @venues.each do |venue| %>

@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
     end
     @venue = Venue.find(params[:id])
     @bookings = @venue.bookings
-    @alert_message = "You are viewing the venue of #{@venue.user.first_name}"
+    # @alert_message = "You are viewing the venue of #{@venue.user.first_name}"
   end
 
   def new
