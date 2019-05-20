@@ -3,17 +3,24 @@
     <h1>My Venues</h1>
     <p>Host parties & events</p>
     <p>Book your venue today!</p>
-      <div class="text-center mt-4">
+      <div class="home-search d-flex justify-content-center text-center mt-4">
         <form action="/venues" method="get">
-          <input type="text" name="location">
-          <input type="submit" value="Search">
+          <input type="text" class="form-control" placeholder="Enter location..." name="location">
+            <select class="custom-select m-2" id="inputGroupSelect04">
+              <option selected>Choose category...</option>
+              <option value="1">Bar</option>
+              <option value="2">Restaurant</option>
+              <option value="3">Club</option>
+              <option value="3">Pub</option>
+            </select>
+          <input type="submit" class="btn-lg btn-info width=100px" value="Search">
         </form>
       </div>
   </div>
 </div>
 
-
-<div class="container">
+<h2 class="text-center m-4">Top Venues</h2>
+<div class="top-cards d-flex">
 <% @venues.each do |venue| %>
   <%= link_to venue_path(venue) do %>
     <section class="cards">
@@ -26,16 +33,13 @@
         <div class="card__img"></div>
         <div class="card__img--hover"></div>
         <div class="card__info">
-          <span class="card__category"> Venue</span>
           <h3 class="card__title"><%= venue.name %></h3>
-          <span class="card__by">by <a href="#" class="card__author" title="author"><%#= user.name %></a></span>
+          <span class="card__category"><%= venue.category %></span>
+        <span class="card__by"><a href="#" class="card__author" title="author"><%#= user.name %></a></span>
         </div>
       </article>
     </section>
   <% end %>
 <% end %>
 </div>
-
-
-
 </div>
