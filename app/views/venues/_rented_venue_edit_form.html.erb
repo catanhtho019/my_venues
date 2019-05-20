@@ -1,0 +1,10 @@
+ <div class="rentals-form">
+    <div class="rentals-form-title">
+      <h2 class="venue_price">£ <%= number_with_delimiter(@venue.price, delimiter: ',') %> per hour</h2>
+    </div>
+  <div>
+    <%= simple_form_for([@venue, @booking]) do |f| %>
+    <%= f.button :submit, "Edit rental", :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

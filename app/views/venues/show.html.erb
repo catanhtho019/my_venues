@@ -30,5 +30,65 @@
   <%= @venue.user.first_name %> <%= @venue.user.last_name %>
 </p>
 
+
+ <div>
+        <p><strong>Reviews</strong></p>
+        <% @bookings.each do |booking|%>
+        <ul class="list-inline">
+         <% if booking.review %>
+            <li class="list-unstyled">
+            <div class="review-chat">
+              <%= cl_image_tag booking.user.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar"  %>
+              <div class="review-comment">
+                <% booking.review.rating.times do %>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <% end %>
+                <% (5- booking.review.rating).times do %>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                <% end %>
+                <p> <%= booking.review.content %> </p>
+              </div>
+            </div>
+            </li>
+          <% end %>
+         </ul>
+       <% end %>
+     </div>
+
+    </div>
+
+    <!-- <div class="col-xs-12 col-sm-6">
+      <div class="text-center">
+        <%#= simple_form_for [@bed, @booking] do |f| %>
+
+          <div class="booking-card">
+            <div >
+            <p>From </p>
+            <%#= f.text_field :checkin_on, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <div>
+            <p> To </p>
+            <%#= f.text_field :checkout_on, class: "datepicker checkout_on", value: @checkout, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <p> <strong>Total price: <span id="total_price"><%= @total_price %> £</span></strong></p>
+            <%#= f.submit "Book", class: "btn btn-danger"%>
+          </div>
+
+        <%# end%>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="col-xs-3 rentals-box">
+    <% if user_signed_in? && @venue.user == current_user %>
+      <%= render 'rented_venue_edit_form' %>
+    <% elsif user_signed_in?  %>
+      <%= render 'rent_venue_form' %>
+    <% else  %>
+      <%=  render 'rent_venue_form' %>
+    <% end %>
+  </div>
+
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
