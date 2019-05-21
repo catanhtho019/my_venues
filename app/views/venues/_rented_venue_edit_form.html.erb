@@ -1,10 +1,21 @@
  <div class="rentals-form">
     <div class="rentals-form-title">
+      <h2 class="text-center my-4">Booking</h2>
       <h2 class="venue_price">£ <%= number_with_delimiter(@venue.price, delimiter: ',') %> per hour</h2>
     </div>
   <div>
-    <%= simple_form_for([@venue, @booking]) do |f| %>
+
+    <%= simple_form_for @venue do |f| %>
+        <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :category, collection: ["Bar", "Club", "Pub",
+          "Café" , "Restaurant", ] %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
     <%= f.button :submit, "Edit rental", :class => "btn btn-primary" %>
     <% end %>
+    <%= link_to 'Back', venues_path %>
   </div>
 </div>

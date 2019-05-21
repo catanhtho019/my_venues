@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # authorize @user
-    @venues = @user.venues
+    @upcoming_venues = @user.bookings.where("checkin_on > CURRENT_DATE")
+    @past_venues = @user.bookings.where("checkin_on < CURRENT_DATE")
     @venue = Venue.new
   end
 
