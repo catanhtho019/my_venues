@@ -1,0 +1,16 @@
+<h1>Editing Venue</h1>
+
+<%= simple_form_for @venue do |f| %>
+        <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :category, collection: ["Bar", "Club", "Pub",
+          "Café" , "Restaurant", ] %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Show', @venue %> |
+<%= link_to 'Back', venues_path %>

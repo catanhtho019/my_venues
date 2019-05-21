@@ -1,6 +1,7 @@
 class Venue < ApplicationRecord
-  has_many :bookings
-  has_many :reviews
   belongs_to :user
-  validates :category, inclusion: { in: %(bar, pubs, restaurants, clubs) } # @categories
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, through: :bookings
+  validates :category, inclusion: { in: %(bar, pubs, restaurants, clubs) }
+  has_many_attached :photo
 end

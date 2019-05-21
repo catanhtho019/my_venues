@@ -1,1 +1,127 @@
-show.html.erb
+<p id="notice"><%= notice %></p>
+
+<div class="container p-4">
+  <div class="card">
+  <div class="heading text-center mt-4">
+  <h2>
+    <%= @venue.name %>
+  </h2>
+</div>
+
+<!-- Tab links -->
+<!-- <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Description')">description</button>
+  <button class="tablinks" onclick="openCity(event, 'Location')">Location</button>
+  <button class="tablinks" onclick="openCity(event, 'Category')">Category</button>
+</div> -->
+
+<!-- Tab content -->
+<!-- <div id="Description" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div> -->
+
+<!-- <div id="Location" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Category" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+  <span onclick="this.parentElement.style.display='none'">x</span>
+</div> -->
+
+  <section class="col-xs-12 col-sm-8 col-md-9 mt-10">
+    <img src="https://picsum.photos/200" class="show-image" alt="<%= @venue.name %>" style="width:300px">
+    <p>
+      <strong>Location:</strong>
+      <%= @venue.location %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @venue.category %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @venue.description %>
+    </p>
+
+    <p>
+      <strong>Price Per Hour (£):</strong>
+      <%= @venue.price %>
+    </p>
+  </section>
+  </div>
+</div>
+
+
+ <div class="container">
+        <p><strong>Reviews</strong></p>
+        <% @bookings.each do |booking|%>
+        <ul class="list-inline">
+         <% if booking.review %>
+            <li class="list-unstyled">
+            <div class="review-chat">
+              <%= cl_image_tag booking.user.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar"  %>
+              <div class="review-comment">
+                <% booking.review.rating.times do %>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <% end %>
+                <% (5- booking.review.rating).times do %>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                <% end %>
+                <p> <%= booking.review.content %> </p>
+              </div>
+            </div>
+            </li>
+          <% end %>
+         </ul>
+       <% end %>
+
+
+
+    <!-- <div class="col-xs-12 col-sm-6">
+      <div class="text-center">
+        <%#= simple_form_for [@bed, @booking] do |f| %>
+
+          <div class="booking-card">
+            <div >
+            <p>From </p>
+            <%#= f.text_field :checkin_on, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <div>
+            <p> To </p>
+            <%#= f.text_field :checkout_on, class: "datepicker checkout_on", value: @checkout, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <p> <strong>Total price: <span id="total_price"><%= @total_price %> £</span></strong></p>
+            <%#= f.submit "Book", class: "btn btn-danger"%>
+          </div>
+
+        <%# end%>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+      <div class="col-xs-3 rentals-box">
+          <% if user_signed_in? && @venue.user == current_user %>
+            <%= render 'rented_venue_edit_form' %>
+          <% elsif user_signed_in?  %>
+            <%= render 'rent_venue_form' %>
+          <% else  %>
+            <%=  render 'rent_venue_form' %>
+          <% end %>
+        </div>
+      <%= link_to 'Back', venues_path %>
+  </div>
