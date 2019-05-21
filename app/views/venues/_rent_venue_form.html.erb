@@ -1,5 +1,6 @@
 <div class="rentals-form">
   <div class="rentals-form-title">
+    <h2 class="text-center my-4">Booking</h2>
     <h5 class="venue_price">£ <span id="venue-price"><%= number_with_delimiter(@venue.price, delimiter: ',') %></span> per hour</h5>
     <h6>Reserve now!</h6>
     </div>
@@ -16,6 +17,7 @@
           <span></span>
         </div>
     </div>
+      <%= link_to 'Back', venues_path %>
     <div id="total">
   </div>
 </div>
