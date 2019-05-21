@@ -4,8 +4,8 @@
       <img src="<%= current_user.photo %>" alt="profile image" style="width:150px;height:150px;padding:10px;">
       <div class="container">
       <div class="row">
-      <div>Column</div>
-      <div>Column</div>
+      <div><h2><%= @user.first_name %></h2></div>
+      <div><h2><%= @user.last_name %></h2></div>
       </div>
       </div>
 
@@ -17,11 +17,11 @@
   </div>
 
   <div class="bookings-card p-4">
-    <h4>Rented venues</h4>
+    <h4>Upcoming Venues</h4>
     <hr>
           <div class="row">
-            <% if @user.bookings.any? %>
-              <% @user.bookings.each do |booking| %>
+            <% if @upcoming_venues %>
+              <% @upcoming_venues.each do |booking| %>
                 <div class="col-md-4">
 
                     <div class="card-description-renting">
@@ -33,11 +33,33 @@
                 </div>
               <% end %>
             <% else %>
-              <p class="col-md-12">You don't have any rented venues yet. You should rent one! </p>
+              <p class="col-md-12">You don't have any upcoming venues yet. You should rent one! </p>
+            <% end %>
+          </div>
+    </div>
+
+    <div class="bookings-card p-4">
+    <h4>Past Venues</h4>
+    <hr>
+          <div class="row">
+            <% if @past_venues %>
+              <% @past_venues.each do |booking| %>
+                <div class="col-md-4">
+
+                    <div class="card-description-renting">
+                      <h2><%= booking.venue.name %></h2>
+                    </div>
+                    <a class="card-link" href="#" ></a>
+                    <%= link_to("See Details", booking_path(booking.venue), class: "card-link") %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p class="col-md-12">You don't have any upcoming venues yet. You should rent one! </p>
             <% end %>
           </div>
     </div>
 </div>
 
-      <h2><%= @user.first_name %></h2>
-      <h2><%= @user.last_name %></h2>
+
+

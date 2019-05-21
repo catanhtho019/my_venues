@@ -41,7 +41,7 @@
 </div> -->
 
   <section class="col-xs-12 col-sm-8 col-md-9 mt-10">
-    <img src="https://picsum.photos/200" class="show-image" alt="<%= @venue.name %>" style="width:300px">
+    <%= cl_image_tag @venue.photo %>
     <p>
       <strong>Location:</strong>
       <%= @venue.location %>
