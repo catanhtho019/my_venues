@@ -2,6 +2,7 @@
   <div class="profile-card p-4">
     <div class="image-user d-flex">
       <img src="<%= current_user.photo %>" alt="profile image" style="width:150px;height:150px;padding:10px;">
+
       <div class="container">
       <div class="row">
       <div><h2><%= @user.first_name %></h2></div>
@@ -9,7 +10,10 @@
       </div>
       </div>
 
+
+      </div>
     </div>
+
     <hr>
     <strong><%= @user.email %></strong>
     <p><%= @user.description %></p>
@@ -60,6 +64,3 @@
           </div>
     </div>
 </div>
-
-
-
