@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(/assets/banner-16bb29d6854f1cfb5f4914191789ded957c23789661cb2d6dccd549d97f29ae9.jpg)">
+<div class="banner" style="background-image: url(<%= image_path "banner.jpg" %>)">
   <div class="container text-center">
     <h1>My Venues</h1>
     <p>Host parties & events</p>
@@ -7,14 +7,14 @@
       <div class="home-search">
         <form action="/venues" method="get">
           <input type="text" class="input form-control" placeholder="Enter location..." name="location">
-            <select class="input custom-select mt-2" id="inputGroupSelect04">
+            <!-- <select class="input custom-select mt-2" id="inputGroupSelect04">
               <option selected>Choose category...</option>
               <option value="1">Bar</option>
               <option value="2">Restaurant</option>
               <option value="3">Club</option>
               <option value="3">Pub</option>
               <option value="4">Café</option>
-            </select>
+            </select> -->
           <input type="submit" class="btn-lg btn-info mt-2" value="Search">
         </form>
         </div>
