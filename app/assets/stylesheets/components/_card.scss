@@ -55,8 +55,24 @@
 }
 
 
+.venue-card {
+  height: 500px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  line-height: 25px;
+  margin-left: 10%;
+}
 
 
+.venue-card h2 {
+ font-size: 25px;
+ color: #735372;
+}
+
+.venue-card a {
+ color: #8f758e;
+}
 
 .card {
   height: 400px;
@@ -142,9 +158,14 @@
   margin-left: 20px;
 }
 
+.profile-card a {
+ color: #735372;
+}
+
 
 .bookings-card {
   width: 500px;
+  height: 500px;
   margin-left: 250px;
   border-radius: 8px;
   overflow: hidden;
@@ -152,6 +173,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.bookings-card a {
+  color: #735372;
+}
 // .results-card {
 //   display: grid;
 //   grid-template-columns: 1fr 1fr 1fr;
@@ -173,13 +197,22 @@
 }
 
 .show-card {
-
-  height: 750px;
+  height: 500px;
   width: 400px;
   border-radius: 8px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   line-height: 25px;
+}
+
+.review-card {
+  height: 500px;
+  width: 400px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  line-height: 25px;
+  margin-bottom: 10%;
 }
 
 

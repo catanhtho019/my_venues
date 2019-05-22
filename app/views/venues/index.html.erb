@@ -39,8 +39,8 @@
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div
             id="map"
-            style="width: 200%;
-            height: 500px;"
+            style="width: 100%;
+            height: calc(100vh - 80px);margin-top:80px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY'] %>">
           </div>
