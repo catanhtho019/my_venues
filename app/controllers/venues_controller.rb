@@ -1,7 +1,10 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.where("location ILIKE '%#{params[:location]}%'")
-
+    if params[:location].present?
+      @venues = Venue.where("location ILIKE '%#{params[:location]}%'")
+    else
+      @venues = Venue.all
+    end
     @venues = @venues.where.not(latitude: nil, longitude: nil)
 
     @markers = @venues.map do |venue|
