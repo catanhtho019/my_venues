@@ -1,5 +1,5 @@
 
-<div class="container mt-4">
+<div class="index-container">
   <h1>Venues</h1>
   <% if @venues.count == 1 %>
     <p class="dark-gray">Found 1 Result</p>
@@ -7,35 +7,50 @@
     <p class="dark-gray">Found <%= @venues.count %> Results</p>
   <% end %>
   <p></p>
-  <div class="row">
-    <% @venues.each do |venue| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to venue_path(venue) do %>
-          <div class="card d-flex">
-            <img class="card-image" src="<%= venue.photo %>" style="height:100%;width:100%;">
-            <div class="card-infos text-left link-unstyled">
-              <div>
-                <h2><%= venue.name.upcase %></h2>
-                <hr>
-                <p><%= venue.location.upcase %></p>
-                <p><%= venue.category %></p>
+  <div style="display: flex;">
+    <div class="containery">
+      <!-- <div> -->
+        <div class="row">
+        <% @venues.each do |venue| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to venue_path(venue) do %>
+            <div class="homepage-card">
+              <img class="card-image d-flex" src="<%= venue.photo %>" style="height:150px;width:300px;">
+
+              <div class="card-infos text-left link-unstyled">
+                <div>
+                  <h2 class="gray"><%= venue.name.upcase %></h2>
+                  <hr>
+                 <div class="d-flex">
+                    <i class="fas fa-map-marker-alt text-purple mt-2"></i>
+                    <p class="text-purple"><%= venue.location.upcase %></p>
+                  </div>
+                    <p class="text-purple mx-2 mb-2"><%= venue.category %></p>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-    <div
-      id="map"
-      style="width: 200%;
-      height: 500px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY'] %>"
-    ></div>
+      <!-- </div> -->
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div
+            id="map"
+            style="width: 200%;
+            height: 500px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY'] %>">
+          </div>
+      </div>
+      </div>
     </div>
-  </div>
 </div>
+
+
+
 
 
 

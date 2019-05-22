@@ -1,6 +1,42 @@
+// #map {
+//   width: 20%;
+//   height: 100px;
+//   position: sticky;
+//   top: 0;
+//   margin-left: 800px;
+//   margin-bottom: 500px;
+
+// }
+
+
+// #map {
+//   width: 30%;
+//   height: 100vh;
+//   position: sticky;
+//   top: 0;
+//   margin-left: 750px;
+//   margin-bottom: 500px;
+// }
+
+
+.containery {
+  display: flex;
+  width: 70%;
+}
+
+
 #map {
-  width: 30%;
   height: 100vh;
   position: sticky;
   top: 0;
+  width: 30%;
+}
+
+.cards {
+  flex-grow: 1;
+}
+
+.index-container {
+  margin: 5%;
+  width: 100%;
 }

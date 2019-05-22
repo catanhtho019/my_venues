@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: url(<%= image_path "banner.jpg" %>)">
   <div class="container text-center">
-    <h1>My Venues</h1>
+    <h1>Venuez</h1>
     <p>Host parties & events</p>
     <h3>Book yours today!</h3>
       <div class="container">
@@ -37,14 +37,17 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <%= link_to venue_path(venue) do %>
           <div class="homepage-card">
-            <img class="card-image d-flex" src="<%= venue.photo %>" style="height:100%;width:100%;">
-      
+            <img class="card-image d-flex" src="<%= venue.photo %>" style="height:150px;width:300px;">
+
             <div class="card-infos text-left link-unstyled">
               <div>
                 <h2 class="gray"><%= venue.name.upcase %></h2>
                 <hr>
-                <p class="card-text-purple"><i class="fas fa-map-marker-alt text-purple"></i> <%= venue.location.upcase %></p>
-                <p class="card-text-purple"><%= venue.category %></p>
+               <div class="d-flex">
+                  <i class="fas fa-map-marker-alt text-purple mt-2"></i>
+                  <p class="text-purple"><%= venue.location.upcase %></p>
+                </div>
+                  <p class="text-purple mx-2"><%= venue.category %></p>
               </div>
             </div>
           </div>
