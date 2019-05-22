@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
     @venue = Venue.new
     @venues = Venue.first(3)
-
   end
 
   def show

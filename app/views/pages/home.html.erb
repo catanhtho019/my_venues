@@ -37,7 +37,8 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <%= link_to venue_path(venue) do %>
           <div class="homepage-card">
-            <img class="card-image d-flex" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="height:150px;width:300px;">
+            <img class="card-image d-flex" src="<%= venue.photo %>" style="height:100%;width:100%;">
+      
             <div class="card-infos text-left link-unstyled">
               <div>
                 <h2 class="gray"><%= venue.name.upcase %></h2>
