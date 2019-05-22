@@ -3,37 +3,47 @@
     <h1>My Venues</h1>
     <p>Host parties & events</p>
     <h3>Book your venue today!</h3>
-      <div class="container d-flex justify-content-center text-center mt-4">
-      <div class="home-search">
-        <form action="/venues" method="get">
-          <input type="text" class="input form-control" placeholder="Enter location..." name="location">
-            <!-- <select class="input custom-select mt-2" id="inputGroupSelect04">
-              <option selected>Choose category...</option>
-              <option value="1">Bar</option>
-              <option value="2">Restaurant</option>
-              <option value="3">Club</option>
-              <option value="3">Pub</option>
-              <option value="4">Café</option>
-            </select> -->
-          <input type="submit" class="btn-lg btn-info mt-2" value="Search">
-        </form>
+      <div class="container">
+        <div class="home-search">
+        <!-- <div class="row d-flex"> -->
+          <form action="/venues" method="get"class="row d-flex justify-content-center align-item-center">
+         <!--    <input type="text" class="input form-control" placeholder="Enter location..." name="location"> -->
+              <!-- <select class="input custom-select mt-2" id="inputGroupSelect04">
+                <option selected>Choose category...</option>
+                <option value="1">Bar</option>
+                <option value="2">Restaurant</option>
+                <option value="3">Club</option>
+                <option value="3">Pub</option>
+                <option value="4">Café</option>
+              </select> -->
+           <!--  <input type="submit" class="btn-lg btn-info mt-2" value="Search"> -->
+                <div class="col-xs-12 col-sm-6 col-md-6 mt-2" style="display:flex;flex-direction: row;justify-content: center;">
+                  <input type="text" class="input form-control" placeholder="Search location..." name="location">
+                  <button class="btn"><i class="fa fa-search"></i></button>
+                </div>
+     <!--            <div class="col-xs-12 col-sm-6 col-md-3">
+                </div> -->
+          </form>
+      <!--   </div> -->
         </div>
       </div>
   </div>
 </div>
 
-<h2 class="text-center m-4">Top Venues</h2>
-<div class="container">
-  <div class="row">
+<h2 class="text-center m-4 gray">Top Venues</h2>
+<div class="container align-item-center">
+  <div class="row justify-content-center align-item-center">
     <% @venues.each do |venue| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <%= link_to venue_path(venue) do %>
           <div class="card d-flex">
             <img class="card-image" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="height:100%;width:100%;">
-            <div class="card-infos">
+            <div class="card-infos text-left link-unstyled">
               <div>
-                <h2><%= venue.name %></h2>
-                <p><%= venue.category %></p>
+                <h2 class="gray"><%= venue.name.upcase %></h2>
+                <hr>
+                <p class="card-text-purple"><i class="fas fa-map-marker-alt text-purple"></i> <%= venue.location.upcase %></p>
+                <p class="card-text-purple"><%= venue.category %></p>
               </div>
             </div>
           </div>
@@ -42,4 +52,10 @@
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
 
