@@ -11,7 +11,7 @@
             <div class="text-center">
               <img src="https://picsum.photos/200" class="show-image" alt="<%= @venue.name %>" style="width:100%">
             </div>
-          <div class="card-infos text-left">
+          <div class="card-infos text-left p-2">
             <div>
               <p>
                 <strong>Location:</strong>
@@ -49,8 +49,10 @@
 
 
 <div class="container mt-4">
-  <div class="card p-2">
-        <h2><strong>Reviews</strong></h2>
+  <div class="card p-4">
+        <h2><strong>Reviews</strong>
+          <i class="fas fa-pencil-alt px-2"></i>
+        </h2>
         <hr>
         <% @bookings.each do |booking|%>
         <ul class="list-inline">
