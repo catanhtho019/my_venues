@@ -2,7 +2,7 @@
   <div class="container text-center">
     <h1>My Venues</h1>
     <p>Host parties & events</p>
-    <h3>Book your venue today!</h3>
+    <h3>Book yours today!</h3>
       <div class="container">
         <div class="home-search">
         <!-- <div class="row d-flex"> -->
@@ -32,12 +32,13 @@
 
 <h2 class="text-center m-4 gray">Top Venues</h2>
 <div class="container align-item-center">
-  <div class="row justify-content-center align-item-center">
+  <div class="row justify-content-between align-item-center">
     <% @venues.each do |venue| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <%= link_to venue_path(venue) do %>
-          <div class="card d-flex">
-            <img class="card-image" src="<%= venue.photo %>" style="height:100%;width:100%;">
+          <div class="homepage-card">
+            <img class="card-image d-flex" src="<%= venue.photo %>" style="height:100%;width:100%;">
+      
             <div class="card-infos text-left link-unstyled">
               <div>
                 <h2 class="gray"><%= venue.name.upcase %></h2>
