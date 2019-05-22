@@ -7,7 +7,9 @@
 }
 
 
-.cardz {
+.homepage-card {
+  height: 320px;
+  width: 300px;
   border-radius: 8px;
   overflow: hidden;
   background: white;
@@ -18,20 +20,20 @@
   transition: 0.4s;
 }
 
-.cardz:hover {
+.homepage-card:hover {
   transform: scale(0.9, 0.9);
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
-.cardz h2 {
+.homepage-card h2 {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: #313848;
 }
 
-.cardz p {
+.homepage-card p {
   font-size: 18px;
   padding: 10px;
   opacity: .7;
@@ -39,13 +41,13 @@
 
 }
 
-.cardz a {
+.homepage-card a {
   color: #735372;
 }
 
 
 
-.cardz .card-infos {
+.homepage-card .card-infos {
   padding: 16px;
   line-height: 20px;
   text-align: center;
