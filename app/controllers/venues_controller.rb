@@ -2,7 +2,7 @@ class VenuesController < ApplicationController
   def index
     @venues = Venue.where("location ILIKE '%#{params[:location]}%'")
 
-    @venues = Venue.where.not(latitude: nil, longitude: nil)
+    @venues = @venues.where.not(latitude: nil, longitude: nil)
 
     @markers = @venues.map do |venue|
       {
